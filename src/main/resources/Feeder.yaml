@@ -12,6 +12,6 @@ infrastructure:
       region: us-east-1
       endpoint: http://host.docker.internal:4566
 
-spoolModuleList:
+modules:
   - feeder:
-      id: "gemini-feeder"
+      id: "sec-feeder"
