@@ -3,14 +3,15 @@ RUN apk add --no-cache curl wget
 
 WORKDIR /app
 
-RUN addgroup -S spool && adduser -S feeder -G spool
-USER feeder
+RUN addgroup -S spool && adduser -S janitor -G spool
+USER janitor
 
-COPY target/sec-feeder.jar app.jar
+COPY target/sec-janitor.jar app.jar
 
-ENV SERVICE_NAME=sec-feeder
+ENV SERVICE_NAME=sec-janitor
 ENV OTEL_LOGS_ENDPOINT=http://host.docker.internal:3100/otlp/v1/logs
 ENV OTEL_TRACES_ENDPOINT=http://host.docker.internal:4318/v1/traces
+ENV OTEL_METRICS_ENDPOINT=http://host.docker.internal:4320/v1/metrics
 
 EXPOSE 8080
 

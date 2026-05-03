@@ -1,5 +1,5 @@
 mvn clean package
-docker stop feeder
-docker rm feeder
-docker build -t feeder .
-docker run -d --name feeder -p :8080 feeder
+docker stop janitor
+docker rm janitor
+docker build -t janitor .
+docker run -d --name janitor -p :8080 janitor

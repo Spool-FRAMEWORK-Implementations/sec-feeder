@@ -13,5 +13,6 @@ infrastructure:
       endpoint: http://host.docker.internal:4566
 
 modules:
-  - feeder:
+  - janitor:
       id: "sec-feeder"
+      everyMilliseconds: 2000
